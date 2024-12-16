@@ -182,22 +182,30 @@ def generar_archivo_csv():
         for usuario in usuarios:
             writer.writerow([usuario.id_usuario, usuario.nombre, usuario.email, usuario.edad, usuario.altura, usuario.estudiante, usuario.cumpleaños])
 
+def cargar_lista_usuarios(reader):
+
+    for row in reader:
+        id_usuario, nombre, email, edad, altura, estudiante, cumpleaños = row
+        nuevo_usuario = Usuario(
+            id_usuario=int(id_usuario),
+            nombre=nombre,
+            email=email,
+            edad=int(edad),
+            altura=float(altura),
+            estudiante=estudiante,
+            cumpleaños=cumpleaños
+        )
+        usuarios.append(nuevo_usuario)
+    
+
 def cargar_archivo_csv():
     try:
         print("Directorio actual de trabajo:", os.getcwd())
         with open('usuarios.csv', 'r') as file:
             reader = csv.reader(file)
-            for row in reader:
-                id_usuario, nombre, email, edad, altura, estudiante, cumpleaños = row
-                nuevo_usuario = Usuario(
-                    id_usuario=int(id_usuario),
-                    nombre=nombre,
-                    email=email,
-                    edad=int(edad),
-                    altura=float(altura),
-                    estudiante=estudiante,
-                    cumpleaños=cumpleaños
-                )
-                usuarios.append(nuevo_usuario)
+            cargar_lista_usuarios(reader)
     except FileNotFoundError:
-        print("El archivo 'usuarios.csv' no se encontró.")
+        print("El archivo 'usuarios.csv' no se encontró. Se crea un archivo vacio.")
+        with open('usuarios.csv', 'w') as file:
+            pass
+            
