@@ -9,7 +9,7 @@ usuarios = []
 
 
 menu_modificacion = """
-Indique que informacion de usuario desdea modificar:
+Indique que información de usuario desdea modificar:
           1 - Nombre de usuario.
           2 - Email usuario
           3 - Edad usuario
@@ -72,7 +72,7 @@ def ver_todos_usuarios_ordenados_por_edad_ascd():
         
 def ver_usuario_por_Id(tipo):
     try:
-        identificador = int(input(f"Introduce el codigo del usuario {'para borrar' if tipo == 'borrar' else ''}: "))
+        identificador = int(input(f"Introduce el código del usuario {'para borrar' if tipo == 'borrar' else ''}: "))
     except ValueError:
         print("Identificador no válido.")
         return True, identificador
@@ -83,7 +83,7 @@ def ver_usuario_por_Id(tipo):
                 print(usuario)
             elif tipo == 'borrar':
                 usuarios.remove(usuario)
-                print(f"Usuario con Codigo {identificador} eliminado.")
+                print(f"Usuario con Código {identificador} eliminado.")
             return False, identificador
 
     return True, identificador
@@ -91,7 +91,7 @@ def ver_usuario_por_Id(tipo):
 def crear_usuario():
     id_usuario = obtener_id_nuevo_usuario() 
     nombre = input("Introduce el nombre del usuario: ")
-    premail = input("Introduce el codigo para el email: ")
+    premail = input("Introduce el código para el email: ")
     email = f"{premail.lower()}@gmail.com"
     edad = val.obtener_edad()
     altura = val.obtener_altura()
@@ -104,7 +104,7 @@ def actualizar_usuario():
     
     nohay, identificador = ver_usuario_por_Id('Modificacion')
     if nohay:
-        print(f'No se ha encuntrado ningun usuario con esta identificacion: {identificador}')
+        print(f'No se ha encuntrado ningun usuario con esta identificación: {identificador}')
         return
     
     # cariables para saner qu cambios se han hecho      
@@ -127,7 +127,7 @@ def actualizar_usuario():
                 nuevo_nombre = input("Introduce el nombre del usuario: ")
                 caso1 = True
             case 2:
-                premail = input("Introduce el codigo para el email: ")
+                premail = input("Introduce el código para el email: ")
                 nuevo_email = f"{premail.lower()}@gmail.com"
                 caso2 = True
             case 3:

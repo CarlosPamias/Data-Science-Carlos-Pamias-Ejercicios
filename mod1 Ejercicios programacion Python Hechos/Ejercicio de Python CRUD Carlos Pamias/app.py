@@ -4,10 +4,10 @@ menu = """
 Te damos la bienvenida a la App de usuarios, estas son las opciones:
           1 - Ver todos los usuarios
           2 - Ver todos los usuarios ordenados por edad
-          3 - Ver un usuarios por codigo
+          3 - Ver un usuarios por código
           4 - Crear nuevo usuario
           5 - Actualizar usuario existente
-          6 - Borrar un usuario por codigo
+          6 - Borrar un usuario por código
           7 - Borrar todos los usuarios
           8 - Salir
           9 - Generar Usuarios
@@ -28,7 +28,7 @@ while True:
         case 3:
             nohay, identificador = crud.ver_usuario_por_Id('consulta')
             if nohay:
-                print(f'No se ha encuntrado ningun usuario con esta identificacion: {identificador}')
+                print(f'No se ha encuntrado ningun usuario con esta identificación: {identificador}')
         case 4:
             crud.crear_usuario()
         case 5:
@@ -36,7 +36,7 @@ while True:
         case 6:
             nohay, identificador = crud.ver_usuario_por_Id('borrar')
             if nohay:
-                print(f'No se ha encuntrado ningun usuario con esta identificacion: {identificador}')
+                print(f'No se ha encuntrado ningun usuario con esta identificación: {identificador}')
         case 7:
             crud.borrar_usuarios()
         case 8:
