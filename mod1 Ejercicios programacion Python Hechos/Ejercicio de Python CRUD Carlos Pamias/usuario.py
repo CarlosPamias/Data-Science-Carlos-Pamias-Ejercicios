@@ -10,7 +10,7 @@ class Usuario:
         self.altura = altura
         self.estudiante = estudiante
         self.cumpleaños = cumpleaños
-        print("Usuario creado correctamente")
+        print(f"Usuario {self.id_usuario} creado correctamente")
         
     def __str__(self):
         return f'Usuario: Código: {self.id_usuario}, Nombre: {self.nombre}, Email: {self.email}, Edad: {self.edad}, Altura: {self.altura}, Es estudiante: {self.estudiante}, Cumpleaños: {self.cumpleaños}.'

@@ -28,7 +28,7 @@ while True:
         case 3:
             nohay, identificador = crud.ver_usuario_por_Id('consulta')
             if nohay:
-                print(f'No se ha encuntrado ningun usuario con esta identificación: {identificador}')
+                print(f'No se ha encontrado ningun usuario con esta identificación: {identificador}')
         case 4:
             crud.crear_usuario()
         case 5:
@@ -36,7 +36,7 @@ while True:
         case 6:
             nohay, identificador = crud.ver_usuario_por_Id('borrar')
             if nohay:
-                print(f'No se ha encuntrado ningun usuario con esta identificación: {identificador}')
+                print(f'No se ha encontrado ningun usuario con esta identificación: {identificador}')
         case 7:
             crud.borrar_usuarios()
         case 8:

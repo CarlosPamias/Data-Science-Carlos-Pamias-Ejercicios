@@ -3,6 +3,13 @@ from datetime import datetime
 
 # Hacemos las validaciones de entrada de los datos
 
+def validar_emails():
+    while True:
+        email = input("Introduce el email del usuario: ")
+        if "@" in email and "." in email and email.count("@") == 1 and 'gmail.com' in email:
+            return email
+        else:
+            print(f'El email introducido: {email} es incorrecto.')
 def obtener_estudiante():
     # Solicita al usuario que ingrese si es estudiante (si/no).
     input_usuario = input("¿El usuario es estudiante?(si/no): ").strip().lower()

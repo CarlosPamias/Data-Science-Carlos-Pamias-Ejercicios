@@ -25,7 +25,7 @@ def obtener_id_nuevo_usuario():
     for usuario in usuarios:
         if usuario.id_usuario >= maximo:
             maximo = usuario.id_usuario
-    return maximo
+    return maximo + 1
 
 # Funciones principales
 def generar_datos_prueba():
@@ -91,13 +91,12 @@ def ver_usuario_por_Id(tipo):
 def crear_usuario():
     id_usuario = obtener_id_nuevo_usuario() 
     nombre = input("Introduce el nombre del usuario: ")
-    premail = input("Introduce el código para el email: ")
-    email = f"{premail.lower()}@gmail.com"
+    email = val.validar_emails()
     edad = val.obtener_edad()
     altura = val.obtener_altura()
     estudiante = val.obtener_estudiante()
     cumpleaños = val.obtener_fecha_cumpleaños()
-    nuevo_usuario = Usuario(id_usuario=id_usuario + 1, nombre=nombre, email=email, edad=edad, altura=altura, estudiante=estudiante, cumpleaños=cumpleaños)
+    nuevo_usuario = Usuario(id_usuario=id_usuario, nombre=nombre, email=email, edad=edad, altura=altura, estudiante=estudiante, cumpleaños=cumpleaños)
     usuarios.append(nuevo_usuario)
         
 def actualizar_usuario():
@@ -107,7 +106,7 @@ def actualizar_usuario():
         print(f'No se ha encuntrado ningun usuario con esta identificación: {identificador}')
         return
     
-    # cariables para saner qu cambios se han hecho      
+    # cariables para saber que cambios se han hecho      
     caso1 = False
     caso2 = False
     caso3 = False
@@ -127,8 +126,7 @@ def actualizar_usuario():
                 nuevo_nombre = input("Introduce el nombre del usuario: ")
                 caso1 = True
             case 2:
-                premail = input("Introduce el código para el email: ")
-                nuevo_email = f"{premail.lower()}@gmail.com"
+                nuevo_email = val.validar_emails()
                 caso2 = True
             case 3:
                 nueva_edad = val.obtener_edad()
