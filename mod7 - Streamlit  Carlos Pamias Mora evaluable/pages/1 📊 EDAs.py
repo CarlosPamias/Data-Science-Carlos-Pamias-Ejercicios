@@ -108,9 +108,6 @@ with col4:
 
 df = load_data()
         
-st.header('1. Carga de datos')
-# Cargar datos
-df = sns.load_dataset('diamonds').dropna()
 # Mostrar datos
 with st.expander('Ver datos'):
     st.dataframe(df, use_container_width=True)

@@ -32,4 +32,4 @@ with col4:
 st.markdown('Ejemplo de aplicación **Streamlit** para EDA, regresión y clasificación para mostrar la informacion de **Diamonds** y predecir las mediante regresión por precio y por clasificación el tipo de corte .')
 
 # ponemos una imagen de los tipos de diamantes
-st.image("data/Diamonds.jpg", caption="Tipos de diamantes")
+st.image("image/Diamonds.jpg", caption="Tipos de diamantes")
